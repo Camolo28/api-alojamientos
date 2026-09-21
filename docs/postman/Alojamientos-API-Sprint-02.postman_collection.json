@@ -1,0 +1,135 @@
+{
+  "info": {
+    "_postman_id": "ff7a8b45-930d-49f6-b499-5fd7a7660dba",
+    "name": "Alojamientos API - Sprint 02",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58388804",
+    "_collection_link": "https://go.postman.co/collection/58388804-ff7a8b45-930d-49f6-b499-5fd7a7660dba?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Registro",
+          "item": [
+            {
+              "name": "Login",
+              "item": [
+                {
+                  "name": "Autenticación",
+                  "item": [
+                    {
+                      "name": "Autorización",
+                      "item": [
+                        {
+                          "name": "Admin despues de promoción",
+                          "request": {
+                            "auth": {
+                              "type": "bearer",
+                              "bearer": [
+                                {
+                                  "key": "token",
+                                  "value": "{{token_admin}}",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/admin/usuarios",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "admin",
+                                "usuarios"
+                              ]
+                            }
+                          },
+                          "response": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Login usuario normal",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": ""
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "Login candidato admin",
+              "item": [
+                {
+                  "name": "Autenticación",
+                  "item": [
+                    {
+                      "name": "Autorización",
+                      "item": []
+                    }
+                  ]
+                },
+                {
+                  "name": "New Request",
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": ""
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": ""
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Origin",
+                "value": "http://localhost:5173"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

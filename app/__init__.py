@@ -11,14 +11,28 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 
-def create_app():
+def create_app(configuracion=None):
     """Crea y configura la aplicación Flask."""
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    if configuracion is not None:
+        app.config.update(configuracion)
+
+    if not app.config.get("SECRET_KEY"):
+        raise RuntimeError("Configura SECRET_KEY en el archivo .env")
+
     db.init_app(app)
+
+    from app.dominios.usuarios.controladores import admin_bp, usuarios_bp
+    from app.errores import registrar_errores
+
     migrate.init_app(app, db)
     CORS(app, origins=app.config["CORS_ALLOWED_ORIGINS"])
+
+    app.register_blueprint(usuarios_bp, url_prefix="/api/v1/usuarios")
+    app.register_blueprint(admin_bp, url_prefix="/api/v1/admin")
+    registrar_errores(app)
 
     @app.get("/health")
     def health():

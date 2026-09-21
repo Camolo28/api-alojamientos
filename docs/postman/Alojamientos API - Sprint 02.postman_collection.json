@@ -21,7 +21,38 @@
                   "item": [
                     {
                       "name": "Autorización",
-                      "item": []
+                      "item": [
+                        {
+                          "name": "Admin antes de promoción",
+                          "request": {
+                            "auth": {
+                              "type": "bearer",
+                              "bearer": [
+                                {
+                                  "key": "token",
+                                  "value": "{{token_admin}}",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/admin/usuarios",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "admin",
+                                "usuarios"
+                              ]
+                            }
+                          },
+                          "response": []
+                        }
+                      ]
                     }
                   ]
                 },

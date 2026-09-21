@@ -1,0 +1,38 @@
+{
+  "info": {
+    "_postman_id": "ebffa974-4e7c-4b37-9ad1-a789f5c8164b",
+    "name": "Alojamientos API - Sprint 01",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58388804",
+    "_collection_link": "https://go.postman.co/collection/58388804-ebffa974-4e7c-4b37-9ad1-a789f5c8164b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "GET /health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Origin",
+                "value": "http://localhost:5173"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

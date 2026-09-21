@@ -33,3 +33,6 @@ class Config:
     CORS_ALLOWED_ORIGINS = [
         origen.strip() for origen in _cors.split(",") if origen.strip()
     ]
+
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    JWT_EXP_MINUTES = int(os.getenv("JWT_EXP_MINUTES", "15"))

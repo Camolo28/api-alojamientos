@@ -8,6 +8,7 @@ class DatosUsuarioDTO(Schema):
             return datos
 
         datos = datos.copy()
+
         for campo in ("nombre", "correo"):
             if isinstance(datos.get(campo), str):
                 datos[campo] = datos[campo].strip()
@@ -20,7 +21,7 @@ class DatosUsuarioDTO(Schema):
 
 class RegistroUsuarioDTO(DatosUsuarioDTO):
     nombre = fields.Str(
-        required=True,
+        load_default="Usuario",
         validate=validate.Length(min=1, max=100),
     )
     correo = fields.Email(
